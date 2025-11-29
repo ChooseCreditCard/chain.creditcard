@@ -4,291 +4,227 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Chain.Creditcard – Payment Chains & Transaction Flows</title>
-  <meta name="description"
-        content="Chain.creditcard explains the full payment chain behind each card transaction – from tap and authorization to clearing, settlement and chargebacks." />
+  <title>Chain.Creditcard – Blockchain Settlement & Card Payments Explained</title>
+  <meta name="description" content="Understand how blockchain value can be bridged into card payments: conversion models, stablecoins, settlement flows and risks." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://chain.creditcard/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Chain.Creditcard – Payment Chains & Transaction Flows" />
-  <meta property="og:description"
-        content="See how card payments move along the chain: cardholder, merchant, acquirer, network and issuer – and where fees, risk and delays enter the flow." />
+  <meta property="og:title" content="Chain.Creditcard – Blockchain Settlement & Card Payments" />
+  <meta property="og:description" content="Learn how blockchain-based balances, tokens and stablecoins are converted into fiat to fund everyday card payments." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://chain.creditcard/" />
-  <meta property="og:image" content="https://chain.creditcard/preview.png" />
+  <meta property="og:image" content="https://choose.creditcard/preview.png?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=og_image" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chain.Creditcard – Blockchain & Card Payment Flows" />
+  <meta name="twitter:description" content="Independent overview of blockchain-to-card payment routing, conversion, fees and compliance." />
+  <meta name="twitter:image" content="https://choose.creditcard/preview.png?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=twitter_image" />
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-64FE63JQ3H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config','G-64FE63JQ3H');
+    gtag('config', 'G-64FE63JQ3H');
   </script>
-</head>
 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
 <body class="bg-slate-950 text-slate-100">
 
-  <!-- HEADER – unified CC -->
   <header class="site-header">
     <div class="nav-inner max-w-6xl">
       <div class="brand">
         <div class="cc-logo">CC</div>
         <div class="brand-text">
-          <span class="brand-title">Chain.creditcard</span>
-          <span class="brand-subtitle">Payment chains · Routing · Settlement</span>
+          <div class="brand-title">Chain.Creditcard</div>
+          <div class="brand-subtitle">Blockchain Settlement & Card Payments</div>
         </div>
       </div>
 
-      <nav class="nav-links">
-        <a href="https://fin.creditcard/">Collection</a>
-        <a href="https://tech.creditcard/">Tech</a>
-        <a href="https://choose.creditcard/">Choose</a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#overview">Overview</a>
+        <a href="#mechanics">How It Works</a>
+        <a href="#compare">Compare</a>
       </nav>
     </div>
   </header>
 
   <main class="cc-page">
 
-    <!-- Breadcrumb -->
-    <p class="cc-breadcrumb">Chain.creditcard · Payment chains · Routing · Settlement</p>
+    <div class="cc-breadcrumb">
+      <a href="https://choose.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=breadcrumb">
+        Home
+      </a> › Chain.Creditcard
+    </div>
 
     <!-- HERO -->
     <section class="hero">
-      <h1>The Payment Chain Behind Every Card Transaction</h1>
-      <p class="hero-lead">
-        From tap or online checkout to money reaching the merchant account – Chain.creditcard walks
-        through each hop in the payment chain and what it means for approvals, fees and risk.
-      </p>
-      <a class="cta"
-         href="https://choose.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=chain_top">
-        Compare Cards for Smooth Authorizations
-      </a>
-    </section>
+      <div class="hero-content">
+        <h1>How Blockchain Value Is Converted Into Card Payments</h1>
+        <p class="hero-lead">
+          Chain.Creditcard explains how blockchain-held value — tokens, stablecoins or on-chain balances — can be routed into traditional card payments using bridges, custodial wallets or settlement pools.
+        </p>
 
-    <!-- What is the payment chain? -->
-    <section class="section">
-      <h2>What is a “payment chain” in card payments?</h2>
-      <p class="small">
-        A payment chain is the full path your card transaction takes from the cardholder to the merchant’s
-        bank account and back – including all the intermediaries that touch the data and the money flow.
-      </p>
-      <p class="small">
-        Even a “simple” card payment usually involves five core parties:
-      </p>
-      <ul class="list">
-        <li><strong>Cardholder</strong> – the person using the card.</li>
-        <li><strong>Merchant</strong> – the business accepting the payment.</li>
-        <li><strong>Acquirer</strong> – the merchant’s bank or PSP.</li>
-        <li><strong>Card network</strong> – Visa, Mastercard, Amex, local schemes, etc.</li>
-        <li><strong>Issuer</strong> – the bank or fintech that issued the card.</li>
-      </ul>
-      <p class="small">
-        The payment chain describes how these parties connect, how messages travel between them and
-        where fees, chargebacks, risk checks and delays enter the picture.
-      </p>
-    </section>
-
-    <!-- How it works -->
-    <section class="section">
-      <h2>How a card payment moves through the chain</h2>
-      <p class="small">
-        While implementations vary between providers, most card payments follow a similar high-level flow:
-      </p>
-      <ul class="list">
-        <li><strong>1. Capture</strong> – the card details are captured via terminal, POS, wallet or online checkout.</li>
-        <li><strong>2. Authorization request</strong> – the acquirer sends an auth request along the network to the issuer.</li>
-        <li><strong>3. Risk &amp; controls</strong> – issuer checks balance, limits, fraud signals, 3DS/SCA rules and more.</li>
-        <li><strong>4. Auth response</strong> – approved or declined, plus codes that explain why.</li>
-        <li><strong>5. Clearing &amp; batching</strong> – approved transactions are grouped and sent for clearing.</li>
-        <li><strong>6. Interchange &amp; scheme fees</strong> – card network and issuer fees are calculated.</li>
-        <li><strong>7. Settlement</strong> – funds are moved between banks and arrive in the merchant’s payout account.</li>
-        <li><strong>8. Post-transaction events</strong> – refunds, chargebacks or disputes may travel back along the chain.</li>
-      </ul>
-      <p class="small">
-        Merchants and fintechs rarely see all of this directly, but small changes in any link of the chain
-        can have a visible effect on approval rates, costs and customer experience.
-      </p>
-    </section>
-
-    <!-- Types / models -->
-    <section class="section">
-      <h2>Different chain models in card payments</h2>
-      <p class="small">
-        Not all payment chains look the same. Depending on the scheme and setup, the structure can change:
-      </p>
-
-      <div class="cluster-grid">
-        <div class="cluster-card">
-          <h3>Four-party schemes</h3>
-          <p class="small">
-            Classic card model with separate issuer and acquirer connected via an open network
-            (e.g. Visa, Mastercard). Common for most debit and credit cards.
-          </p>
-        </div>
-
-        <div class="cluster-card">
-          <h3>Three-party schemes</h3>
-          <p class="small">
-            Card, issuer and acquirer are controlled by the same brand (e.g. some Amex or store cards),
-            simplifying the chain but limiting reach.
-          </p>
-        </div>
-
-        <div class="cluster-card">
-          <h3>Aggregator / PSP models</h3>
-          <p class="small">
-            Payment service providers bundle acquiring, routing and risk, adding an extra node in the chain
-            while simplifying integration for merchants.
-          </p>
-        </div>
-
-        <div class="cluster-card">
-          <h3>On-us vs off-us</h3>
-          <p class="small">
-            When issuer and acquirer are the same bank (“on-us”), processing can be faster and cheaper.
-            Off-us requires external clearing and more hops.
-          </p>
-        </div>
-
-        <div class="cluster-card">
-          <h3>Card-present vs CNP</h3>
-          <p class="small">
-            In-store chip &amp; PIN / tap vs. online or in-app payments. Card-not-present (CNP) adds extra
-            risk checks and often 3DS/SCA into the chain.
-          </p>
-        </div>
-
-        <div class="cluster-card">
-          <h3>Wallet &amp; tokenized chains</h3>
-          <p class="small">
-            Apple Pay, Google Pay and other wallets insert tokenization and wallet providers into the chain,
-            improving security and changing how data flows.
-          </p>
-        </div>
+        <a class="cta"
+           href="https://choose.creditcard/crypto/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=hero_cta">
+          Explore the Crypto & Web3 hub
+        </a>
       </div>
     </section>
 
-    <!-- Fees / Risks / Limits table -->
-    <section class="section">
-      <h2>Where fees, risks and limits appear in the chain</h2>
-      <p class="small">
-        Each link in the chain can introduce cost, risk controls and limits. Understanding where they sit
-        helps explain why a transaction is expensive, slow or declined.
+    <!-- OVERVIEW -->
+    <section id="overview" class="section">
+      <h2>What Is a Chain-Based Card?</h2>
+      <p>
+        A “chain card” links a standard Visa or Mastercard to funds stored on a blockchain. Instead of pulling money from a bank account, the issuer checks an on-chain or custodial wallet, converts value to fiat, and settles the merchant transaction through the card network.
       </p>
+      <p>
+        For merchants nothing changes — payouts arrive in local currency. All blockchain interaction happens on the issuer side, which handles liquidity, conversion and settlement.
+      </p>
+    </section>
+
+    <!-- MECHANICS -->
+    <section id="mechanics" class="section">
+      <h2>How Chain-to-Card Bridges Work</h2>
+      <p>
+        When a user taps their card, the card network requests authorisation. A backend service evaluates the user’s chain balance, checks token or stablecoin holdings, and either:
+      </p>
+      <p>
+        • converts crypto to fiat instantly,  
+        • draws from a prefunded fiat pool synced with on-chain assets, or  
+        • performs a hybrid model where stablecoins back internal ledgers.
+      </p>
+      <p>
+        The settlement the merchant receives always occurs in standard fiat, even if the user spent assets originally stored on-chain.
+      </p>
+    </section>
+
+    <!-- FEES -->
+    <section class="section">
+      <h2>Conversion Costs, Spreads & Blockchain Fees</h2>
+      <p>
+        Chain-based card systems often involve several layers of cost: network gas fees, conversion spreads, liquidity slippage, and standard card-related fees such as FX margins. Understanding all layers is essential to estimating the total cost of using blockchain-backed cards.
+      </p>
+      <p>
+        Some programmes hide spreads inside conversion quotes, so published “0% fees” may still mask meaningful costs.
+      </p>
+    </section>
+
+    <!-- REWARDS -->
+    <section class="section">
+      <h2>Rewards & Incentive Structures</h2>
+      <p>
+        Depending on the provider, rewards may be earned in fiat, points, or blockchain-based tokens. Token rewards can look attractive, but their value depends on volatility, liquidity and redemption terms.
+      </p>
+      <p>
+        Some chain programmes reward users for staking assets or locking liquidity, which increases exposure to protocol risk.
+      </p>
+    </section>
+
+    <!-- RISK -->
+    <section class="section">
+      <h2>Risk, Volatility & Regulatory Considerations</h2>
+      <p>
+        Converting blockchain assets into fiat can trigger tax events, depending on the jurisdiction. Using a chain-backed card day-to-day may generate numerous small disposals requiring documentation.
+      </p>
+      <p>
+        Regulatory clarity varies widely. Chain issuers may fall under e-money, payment-processor or crypto-asset rules — each with different obligations for safeguarding and consumer protection.
+      </p>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section id="compare" class="section">
+      <h2>Compare Chain-Based Card Models</h2>
 
       <div class="table-wrap">
         <table class="table">
           <thead>
-          <tr>
-            <th>Chain link</th>
-            <th>Typical fees / costs</th>
-            <th>Risks &amp; limits</th>
-          </tr>
+            <tr>
+              <th>Feature</th>
+              <th>What to Check</th>
+              <th>Why It Matters</th>
+            </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Merchant &amp; acquirer</td>
-            <td>Merchant service fee, gateway/PSP fees, terminal or platform fees.</td>
-            <td>Merchant category (MCC) restrictions, volume limits, rolling reserves.</td>
-          </tr>
-          <tr>
-            <td>Card network</td>
-            <td>Scheme fees, cross-border fees, assessment fees.</td>
-            <td>Rules on surcharging, acceptance, dispute handling and compliance.</td>
-          </tr>
-          <tr>
-            <td>Issuer</td>
-            <td>Interchange fees, FX margins when currency conversion is involved.</td>
-            <td>Credit limits, daily spend limits, fraud rules, SCA/3DS policy.</td>
-          </tr>
-          <tr>
-            <td>Settlement &amp; payouts</td>
-            <td>Payout fees, currency conversion, faster-settlement premiums.</td>
-            <td>Payout delays, reserve balances, risk-based settlement schedules.</td>
-          </tr>
-          <tr>
-            <td>Post-transaction</td>
-            <td>Chargeback fees, retrieval fees, operational dispute handling costs.</td>
-            <td>Fraud exposure, friendly fraud, regulatory and scheme compliance.</td>
-          </tr>
+            <tr>
+              <td>Conversion Method</td>
+              <td>Instant, pooled, or batch-based conversion</td>
+              <td>Determines volatility exposure and execution cost.</td>
+            </tr>
+            <tr>
+              <td>Supported Assets</td>
+              <td>Tokens, stablecoins, multi-chain support</td>
+              <td>Impacts flexibility and liquidity stability.</td>
+            </tr>
+            <tr>
+              <td>Fee Structure</td>
+              <td>Gas fees, spreads, card fees</td>
+              <td>Reveals the true cost of using the card.</td>
+            </tr>
+            <tr>
+              <td>Compliance</td>
+              <td>Licensing, AML/KYC, fund segregation</td>
+              <td>Critical for user safety and dispute resolution.</td>
+            </tr>
+            <tr>
+              <td>Reporting Tools</td>
+              <td>Exportable histories, tax-ready summaries</td>
+              <td>Important for regulatory reporting obligations.</td>
+            </tr>
           </tbody>
         </table>
       </div>
+
+      <p class="small">
+        For live comparisons, visit
+        <a href="https://choose.creditcard/crypto/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=comparison_section">
+          the Crypto & Web3 hub on Choose.Creditcard
+        </a>.
+      </p>
     </section>
 
-    <!-- Cluster links -->
+    <!-- COLLECTION -->
     <section class="section">
-      <h2>The chain, mesh &amp; crypto cluster</h2>
+      <h2>Part of The CreditCard Collection</h2>
       <p class="small">
-        Chain.creditcard is part of a focused group of domains in The CreditCard Collection that explain
-        how payments move across rails and networks:
+        Chain.Creditcard is part of <strong>The CreditCard Collection</strong>, operated by ronarn AS. Each microsite explains one
+        component of the modern payments stack with independent, documentation-based summaries.
+      </p>
+      <p class="small">
+        This page does not provide financial or investment advice; it restates common blockchain-to-card models to help users understand the mechanics behind hybrid payment solutions.
       </p>
 
-      <div class="cluster-grid">
-        <a class="cluster-card"
-           href="https://meshpay.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=meshpay">
-          <h3>MeshPay.creditcard</h3>
-          <p class="small">Smart routing across multiple networks, providers and rails.</p>
-        </a>
-
-        <a class="cluster-card"
-           href="https://cryptopay.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=cryptopay">
-          <h3>CryptoPay.creditcard</h3>
-          <p class="small">How crypto and stablecoins connect into traditional card chains.</p>
-        </a>
-
-        <a class="cluster-card"
-           href="https://defipay.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=defipay">
-          <h3>DefiPay.creditcard</h3>
-          <p class="small">Using DeFi balances and rails behind everyday card payments.</p>
-        </a>
-
-        <a class="cluster-card"
-           href="https://fx.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=fx">
-          <h3>FX.Creditcard</h3>
-          <p class="small">Where FX, cross-border fees and currency conversion sit in the chain.</p>
-        </a>
-
-        <a class="cluster-card"
-           href="https://fin.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=fin">
-          <h3>Fin.Creditcard</h3>
-          <p class="small">Overview of the full CreditCard Collection and core concepts.</p>
-        </a>
-
-        <a class="cluster-card"
-           href="https://tech.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=tech">
-          <h3>Tech.Creditcard</h3>
-          <p class="small">Technical deep dives into routing, risk engines and payment stacks.</p>
+      <!-- REQUIRED SNIPPET -->
+      <div class="hub-link">
+        <a href="https://choose.creditcard/crypto/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=minisite_to_hub"
+           class="text-sm text-slate-600 hover:text-slate-900">
+          Learn more at the Crypto &amp; Web3 hub
         </a>
       </div>
     </section>
 
-    <!-- CTA bottom -->
+    <!-- BOTTOM CTA -->
     <section class="section">
-      <h2>Choosing cards that work well along the chain</h2>
+      <h2>Ready to Compare Crypto-Enabled Cards?</h2>
       <p class="small">
-        Chain.creditcard focuses on the structure and logic of the payment chain itself. To see how
-        different card products behave in practice – fees, FX, rewards and wallet support – use the
-        comparison engine on Choose.Creditcard:
+        Explore stablecoin cards, crypto conversion cards, hybrid settlement models and traditional travel/cashback cards — all on one platform.
       </p>
+
       <a class="cta"
-         href="https://choose.creditcard/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=chain_bottom">
-        Open Card Comparison on Choose.Creditcard
+         href="https://choose.creditcard/crypto/?utm_source=chain.creditcard&utm_medium=referral&utm_campaign=bottom_cta">
+        Go to the Crypto & Web3 hub
       </a>
     </section>
 
   </main>
 
-  <!-- MINI FOOTER -->
   <footer class="mini-footer">
-    <p class="mini-footer-main">
-      © 2025 The CreditCard Collection — ronarn AS
-    </p>
+    <p class="mini-footer-main">© 2025 The CreditCard Collection — ronarn AS</p>
     <p class="mini-footer-contact">
       Contact: <a href="mailto:support@cc.creditcard">support@cc.creditcard</a>
     </p>
